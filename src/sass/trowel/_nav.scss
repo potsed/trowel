@@ -1,0 +1,24 @@
+$nav_theme: $base_theme !default;
+$nav_type: 'is-flat' !default;
+$nav_padding: 'has-padding-tiny' !default;
+$nav_size: 5 !default;
+$nav_gradient: false !default;
+$nav_3D: false !default;
+
+header nav, .nav, [trowel-nav], [≈nav] {
+    @extend .flex-row;
+    @extend .#{$nav_theme};
+    @extend .#{$nav_padding};
+    min-width: $nav_size + vw;
+    min-height: $nav_size + vh;
+
+    &.is-gradient {
+        @extend %#{$nav_theme}_gradient;
+    }
+    @if($nav_type == 'is-gradient' or $nav_gradient ) {
+        @extend %#{$nav_theme}_gradient;
+    }
+    @if($nav_type == 'is-3D' or $nav_3D ) {
+        @extend %#{$nav_theme}_3D;
+    }
+}

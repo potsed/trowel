@@ -1,0 +1,21 @@
+@each $name, $theme in $themes {
+    $bgcolor: nth($theme, 1);
+    $altcolor: nth($theme, 2);
+
+    %is-#{$name}_3D {
+        @include is3D( $bgcolor );
+    }
+
+    %is-#{$name}_gradient {
+        @include isGradient( $bgcolor );
+    }
+
+    %is-#{$name}_outlined {
+        @include isOutlined( "is-" + $name, $altcolor );
+    }
+}
+
+.is-flat {
+
+    box-shadow: 0px 2px 6px -2px rgba( $black, .5 );
+}

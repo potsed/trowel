@@ -1,0 +1,168 @@
+$sizes: (
+    'tiny': ( .5, '-t' ), 'small': ( .75, '-s' ),
+    'regular': ( 1, '-n' ), 'big': ( 1.25, '-b' ),
+    'huge': ( 1.5, '-h' ),'jumbo': ( 1.75, '-j' ),
+);
+
+.is-tiny {
+    @extend .is-uppercase;
+}
+
+.has-padding-top, .pt {
+    padding-top: #{$base_unitsize}#{$base_unit};
+}
+.has-padding-bottom, .pt {
+    padding-bottom: #{$base_unitsize}#{$base_unit};
+}
+.has-padding-left, .pl {
+    padding-left: #{$base_unitsize}#{$base_unit};
+}
+.has-padding-right, .pr {
+    padding-right: #{$base_unitsize}#{$base_unit};
+}
+.has-padding-vertical, .pv {
+    @extend .has-padding-top;
+    @extend .has-padding-bottom;
+}
+.has-padding-horizontal, .ph {
+    @extend .has-padding-left;
+    @extend .has-padding-right;
+}
+.has-padding, .p {
+    @extend .has-padding-vertical;
+    @extend .has-padding-horizontal;
+}
+.has-padding-topless, .phb {
+    @extend .has-padding;
+    padding-top: 0;
+}
+.has-padding-bottomless, .pht {
+    @extend .has-padding;
+    padding-bottom: 0;
+}
+.has-padding-start, .pvr {
+    @extend .has-padding;
+    padding-left: 0;
+}
+.has-padding-end, .pvl {
+    @extend .has-padding;
+    padding-right: 0;
+}
+.has-margin-top, .mt {
+    margin-top: #{$base_unitsize}#{$base_unit};
+}
+.has-margin-bottom, .mb {
+    margin-bottom: #{$base_unitsize}#{$base_unit};
+}
+.has-margin-left, .ml {
+    margin-left: #{$base_unitsize}#{$base_unit};
+}
+.has-margin-right, .mr {
+    margin-right: #{$base_unitsize}#{$base_unit};
+}
+.has-margin-vertical, .mv {
+    @extend .has-margin-top;
+    @extend .has-margin-bottom;
+}
+.has-margin-horizontal, .mh {
+    @extend .has-margin-left;
+    @extend .has-margin-right;
+}
+.has-margin, .m {
+    @extend .has-margin-vertical;
+    @extend .has-margin-horizontal;
+}
+.has-margin-topless, .mhb {
+    @extend .has-margin;
+    margin-top: 0;
+}
+.has-margin-bottomless, .mht {
+    @extend .has-margin;
+    margin-bottom: 0;
+}
+.has-margin-start, .mvr {
+    @extend .has-margin;
+    margin-left: 0;
+}
+.has-margin-end, .mvl {
+    @extend .has-margin;
+    margin-right: 0;
+}
+
+@each $name, $settings in $sizes {
+    $multiplier: nth( $settings, 1 );
+    $key: nth( $settings, 2 );
+    .is-#{$name} {
+        font-size: calc( #{$base_unitsize}#{$base_unit} * #{$multiplier} );
+    }
+
+    $calc: calc( #{$base_unitsize}#{$base_unit} * #{$multiplier} );
+    .has-padding {
+        &-top-#{$name} { padding-top: $calc; }
+        &-bottom-#{$name} { padding-bottom: $calc; }
+        &-left-#{$name} { padding-left: $calc; }
+        &-right-#{$name} { padding-right: $calc; }
+        &-vertical-#{$name} {
+            @extend .has-padding-top-#{$name};
+            @extend .has-padding-bottom-#{$name};
+        }
+        &-horizontal-#{$name} {
+            @extend .has-padding-left-#{$name};
+            @extend .has-padding-right-#{$name};
+        }
+        &-#{$name} {
+            @extend .has-padding-horizontal-#{$name};
+            @extend .has-padding-vertical-#{$name};
+        }
+        &-topless-#{$name} {
+            @extend .has-padding-#{$name};
+            padding-top: 0;
+        }
+        &-bottomless-#{$name} {
+            @extend .has-padding-#{$name};
+            padding-bottom: 0;
+        }
+        &-start-#{$name} {
+            @extend .has-padding-#{$name};
+            padding-right: 0;
+        }
+        &-end-#{$name} {
+            @extend .has-padding-#{$name};
+            padding-left: 0;
+        }
+    }
+    .has-margin {
+        &-top-#{$name} { margin-top: $calc; }
+        &-bottom-#{$name} { margin-bottom: $calc; }
+        &-left-#{$name} { margin-left: $calc; }
+        &-right-#{$name} { margin-right: $calc; }
+        &-vertical-#{$name} {
+            @extend .has-margin-top-#{$name};
+            @extend .has-margin-bottom-#{$name};
+        }
+        &-horizontal-#{$name} {
+            @extend .has-margin-left-#{$name};
+            @extend .has-margin-right-#{$name};
+        }
+        &-#{$name} {
+            @extend .has-margin-horizontal-#{$name};
+            @extend .has-margin-horizontal-#{$name};
+        }
+        &-topless-#{$name} {
+            @extend .has-margin-#{$name};
+            margin-top: 0;
+        }
+        &-bottomless-#{$name} {
+            @extend .has-margin-#{$name};
+            margin-bottom: 0;
+        }
+        &-start-#{$name} {
+            @extend .has-margin-#{$name};
+            margin-right: 0;
+        }
+        &-end-#{$name} {
+            @extend .has-margin-#{$name};
+            margin-left: 0;
+        }
+    }
+};

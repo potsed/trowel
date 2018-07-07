@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="./trowel.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <button class="is-cta is-small">Call to action</button>
+            </nav>
+        </header>
+
+
+        <section>
+            <div class="tabs">
+                <nav>
+                    <ul>
+                        <li class="is-active">Tab 1</li>
+                        <li>Tab 2</li>
+                    </ul>
+                </nav>
+                <div>
+                    One
+                    <p>
+                        Molestiae iure magnam corrupti provident. Molestias inventore aut fugiat architecto ratione doloremque. Officiis velit aut quos facere tempora dignissimos.
+                    </p><p>
+                        Incidunt ipsa similique eligendi inventore debitis qui. Ut laudantium omnis necessitatibus quia in repellendus. Nobis sit alias voluptas et aut dignissimos architecto. Deserunt sequi aliquam reiciendis.
+                    </p><p>
+                        Aliquid ipsum nihil non aut. Mollitia unde repellat quod. Laudantium aspernatur consequatur nostrum cum quod eum vel a reiciendis. Minima expedita tenetur et molestias quidem labore ex. Sapiente alias odit et quia ad aliquam itaque.
+                    </p>
+                </div>
+
+                <div>
+                    two
+                    <p>
+                        Molestiae iure magnam corrupti provident. Molestias inventore aut fugiat architecto ratione doloremque. Officiis velit aut quos facere tempora dignissimos.
+                    </p><p>
+                        Incidunt ipsa similique eligendi inventore debitis qui. Ut laudantium omnis necessitatibus quia in repellendus. Nobis sit alias voluptas et aut dignissimos architecto. Deserunt sequi aliquam reiciendis.
+                    </p><p>
+                        Aliquid ipsum nihil non aut. Mollitia unde repellat quod. Laudantium aspernatur consequatur nostrum cum quod eum vel a reiciendis. Minima expedita tenetur et molestias quidem labore ex. Sapiente alias odit et quia ad aliquam itaque.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <section>
+                <h1>Buttons</h1>
+                <p>Like all components of Trowel, buttons have numerous default setting based on your base colors.</p>
+                <p>Of course these are easily customised. Here are the SASS variables (and default values) available to change.</p>
+                <pre>
+Variable                        Default Value               Available Options
+----------------------------------------------------------------------------------------------------
+$button_theme                   is-brand                    Any is-[theme] string
+$button_style                   is-rounded                  is-sharp, is-pill, is-rounded
+$button_type                    is-flat                     is-flat, is-outlined, is-3D, is-gradient
+$button_size                    is-regular                  is-[tiny|small|regular|large|big|huge|jumbo]
+$button_padding                 0.36em 1.6em 0.38em
+$button_margin                  has-margin-tiny             has-margin-[tiny|small|regular|large|big|huge|jumbo]
+$button_case                    is-capitalized              is-capitalized, is-uppercase
+$button_font_weight             300
+$button_border_width            2px
+$button_3D                      false                       | You can set default button styles
+$button_outlined                false                       | using these flags. By setting defaults
+$button_gradient                false                       | you can clean up the html to the minimal
+$button_shadow                  true                        | &lt;button&gt;Label&lt;/button&gt;
+                </pre>
+            </section>
+            <section>
+                <h3>Button Defaults</h3>
+                <a class="btn">a.btn</a>
+                <div class="btn">div.btn</div>
+                <button>&lt;button&gt;</button>
+            </section>
+            <section>
+                <h3>Button Themes</h3>
+                <button>Default .is-brand</button>
+                <button class="is-cta">.is-cta</button>
+                <button class="is-info">.is-info</button>
+                <button class="is-warning">.is-warning</button>
+                <button class="is-danger">.is-danger</button>
+                <button class="is-success">.is-success</button>
+                <button class="is-light">.is-light</button>
+            </section>
+            <section>
+                <h3>Button Sizes</h3>
+                <button class="is-jumbo">jumbo</button>
+                <button class="is-huge">huge</button>
+                <button class="is-big">big</button>
+                <button class="is-regular">regular</button>
+                <button class="is-small">small</button>
+                <button class="is-tiny">tiny</button>
+            </section>
+            <section>
+                <h3>Button Styles</h3>
+                <button class="is-sharp">sharp</button>
+                <button class="is-rounded">rounded</button>
+                <button class="is-pill">pill</button>
+            </section>
+            <section>
+                <h3>Button Types</h3>
+                <button class="is-flat">flat</button>
+                <button class="is-3D">3D</button>
+                <button class="is-outlined">outlined</button>
+                <button class="is-gradient">gradient</button>
+            </section>
+            <section>
+                <h3>Button Types Disabled</h3>
+                <button class="is-flat" disabled>flat</button>
+                <button class="is-3D" disabled>3D</button>
+                <button class="is-outlined" disabled>outlined</button>
+                <button class="is-gradient" disabled>gradient</button>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1>Heading Sizes</h1>
+                <h1>H1 - Heading</h1>
+                <h2>H2 - Heading</h2>
+                <h3>H3 - Heading</h3>
+                <h4>H4 - Heading</h4>
+                <h5>H5 - Heading</h5>
+                <h6>H6 - Heading</h6>
+            </section>
+        </section>
+
+        <section>
+            <h1>Tags</h1>
+            <section>
+                <code>USAGE: &lt;u&gt;...&lt;/u&gt; or &lt;span class="tag"&gt;...&lt;/span&gt;</code>
+            </section>
+            <u>Tag</u>
+            <u>A longer tag</u>
+            <u class="is-greyscale">.is-greyscale</u>
+            <u class="is-danger">.is-danger</u>
+
+            <section>
+                <code>&lt;u&gt;Default themed tag&lt;/u&gt;</code>
+                <code>&lt;u&gt;A longer tag&lt;/u&gt;</code>
+                <code>&lt;u class="is-greyscale"&gt;.is-greyscale&lt;/u&gt;</code>
+                <code>&lt;u class="is-danger"&gt;.is-danger&lt;/u&gt;</code>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1>Blockquote</h1>
+
+                <section>
+                    <code>USAGE: &lt;blockquote&gt;...&lt;/blockquote&gt;</code>
+                </section>
+
+                <blockquote>Voluptatibus magni deleniti doloremque quo. Inventore alias minima aut inventore aspernatur aut ut. Eum est magni esse ratione. Dolorum id ut sed. Dolorem dolores dignissimos quas eligendi commodi. Aut suscipit est.</blockquote>
+            </section>
+        </section>
+
+
+        <section>
+            <section>
+                <h1>Lists</h1>
+                <section>
+                    <h3>Default</h3>
+                    <ul>
+                        <li>UL</li>
+                        <li>Item</li>
+                        <li>With nested UL
+                            <ul>
+                                <li>Item</li>
+                                <li>Item</li>
+                            </ul>
+                        </li>
+                        <li>With nested OL
+                            <ol>
+                                <li>Item</li>
+                                <li>Item</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Clean UL or OL</h3>
+                    <ul ≈clean>
+                        <li>Item</li>
+                        <li>Item with nested clean UL
+                            <ul ≈clean>
+                                <li>Item</li>
+                                <li>Item</li>
+                            </ul>
+                        </li>
+                        <li>Item with nested UL
+                            <ul>
+                                <li>Item</li>
+                                <li>Item</li>
+                            </ul>
+                        </li>
+                        <li>Item with nested OL
+                            <ol>
+                                <li>Item</li>
+                                <li>Item</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Inline</h3>
+                    <ul ≈inline>
+                        <li>Item</li>
+                        <li>Item</li>
+                        <li>Item</li>
+                        <li>Item</li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </body>
+</html>

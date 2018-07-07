@@ -1,0 +1,12 @@
+$row_padding: 'has-padding' !default;
+$row-margin: 'has-margin-vertical' !default;
+
+section, .row, .section {
+    @extend .flex-row;
+    @extend .#{$row_padding};
+    @extend .#{$row_margin};
+
+    section, .row, .section {
+        @extend .is-paddingless-horizontal;
+    }
+}

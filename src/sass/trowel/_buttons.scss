@@ -1,0 +1,94 @@
+$button_theme: $base_theme !default;
+$button_style: 'is-rounded' !default;
+$button_type: 'is-flat' !default;
+$button_size: 'is-regular' !default;
+$button_padding: $base_item_padding !default;
+$button_margin: 'has-margin-end-tiny' !default;
+$button_border_width: $base_border_width !default;
+$button_3D: false !default;
+$button_outlined: false !default;
+$button_gradient: false !default;
+$button_case: 'is-capitalized' !default;
+$button_font_weight: $base_font_weight !default;
+$button_shadow: true !default;
+
+button, .btn, [trowel-button], [≈button] {
+    @extend .#{$button_theme};
+    @extend .#{$button_size};
+    @extend .#{$button_case};
+    @extend .#{$button_style} !optional;
+    @extend .#{$button_margin} !optional;
+
+    padding: $button_padding;
+    border-style: solid;
+    border-width: $button_border_width;
+    font-weight: $button_font_weight;
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
+
+    &.is-flat {
+        @extend .is-flat;
+    }
+    @if( $button_type == 'is-flat' ) {
+        @extend .is-flat;
+    }
+
+    &.is-3D {
+        @extend %#{$button_theme}_3D;
+    }
+    @if($button_type == 'is-3D' or $button_3D ) {
+        @extend %#{$button_theme}_3D;
+    }
+
+    &.is-gradient {
+        @extend %#{$button_theme}_gradient;
+    }
+    @if($button_type == 'is-gradient' or $button_gradient ) {
+        @extend %#{$button_theme}_gradient;
+    }
+
+    &.is-outlined {
+        @extend %#{$button_theme}_outlined;
+    }
+    @if($button_type == 'is-outlined' or $button_outlined ) {
+        @extend %#{$button_theme}_outlined;
+        &:hover {
+            background: $white;
+        }
+    }
+
+    @include ripple( map-get( $theme_bg_colors, $button_theme) );
+    &:focus { outline: none; }
+}
+
+@each $name, $theme in $themes {
+    $bgcolor: nth($theme, 1);
+    $altcolor: nth($theme, 2);
+
+    button.is-#{$name},
+    .btn.is-#{$name} {
+        border-color: $bgcolor;
+        &.is-3D {
+            @extend %is-#{$name}_3D;
+        }
+        &.is-gradient {
+            @extend %is-#{$name}_gradient;
+        }
+        &.is-outlined {
+            @extend %is-#{$name}_outlined;
+        }
+
+        @if($button_type == 'is-3D' or $button_3D ) {
+            @extend %is-#{$name}_3D;
+        }
+        @if($button_type == 'is-gradient' or $button_gradient ) {
+            @extend %is-#{$name}_gradient;
+        }
+        @if($button_type == 'is-outlined' or $button_outlined ) {
+            @extend %is-#{$name}_outlined;
+        }
+
+        @include ripple( map-get( $theme_bg_colors, 'is-' + $name ) );
+    }
+};
