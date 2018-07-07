@@ -1,0 +1,39 @@
+$tab_theme: $base_theme !default;
+$tab_padding: $base_item_padding !default;
+$tab_style: 'is-rounded' !default;
+$tab_type: 'is-flat' !default;
+$tab_size: 'is-regular' !default;
+$tab_border_width: $base_border_width !default;
+$tab_font_weight: $base_font_weight !default;
+
+
+
+
+.tabs{
+    nav {
+        @extend .flex-row;
+        @extend .has-margin-bottom;
+        > ul {
+            @extend .flex-row;
+            @extend .is-paddingless;
+            @extend .is-marginless;
+
+            list-style: none;
+
+            > li {
+                @extend .flex-item;
+                @extend .#{$tab_size};
+                padding: $tab_padding;
+                font-weight: $tab_font_weight;
+                cursor: pointer;
+                &.is-active {
+                    @extend .#{$tab_theme};
+                    @extend .#{$tab_style} !optional;
+                    @extend .#{$tab_type} !optional;
+                    border-style: solid;
+                    border-width: $tab_border_width;
+                }
+            }
+        }
+    }
+}

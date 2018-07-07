@@ -1,0 +1,71 @@
+// Main Settings
+// =============================================================================
+// $base_theme:                 'is-brand';
+// $text:                       $black;
+// $shadow_color:               $black;
+// $page-background:            $white;
+// $translucent:                rgba( $white, .3 );
+// $base_fontsize:              16px;
+// $base_font_family:           system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+
+// Defined Theme Colors
+// =============================================================================
+// $brand:             rgb(95, 75, 139);
+// $brand-alt:         $white;
+// $secondary:         $black;
+// $secondary-alt:     $white;
+// $cta:               rgb(248, 215, 66);
+// $cta-alt:           $black;
+// $subdued:           desaturate( $brand, 50% );
+// $subdued-alt:       $white;
+// $greyscale:         grayscale( $brand );
+// $greyscale-alt:     $white;
+// $info:              rgb(87, 150, 214);
+// $info-alt:          $white;
+
+// Creating custom theme colors
+// =============================================================================
+// $custom_colors: (
+//     'color_name': ( color1, color2 ), // === .is-color_name
+// );
+
+// Buttons
+// =============================================================================
+// $button_theme: $base_theme;
+// $button_style: 'is-rounded';
+// $button_type: 'is-flat';
+// $button_size: 'is-regular';
+// $button_padding: $base_item_padding;
+// $button_margin: 'has-margin-end-tiny';
+// $button_border_width: $base_border_width;
+// $button_3D: false;
+// $button_outlined: false;
+// $button_gradient: false;
+// $button_case: 'is-capitalized';
+// $button_font_weight: $base_font_weight;
+// $button_shadow: true;
+
+
+// Nav <nav>
+// =============================================================================
+// $nav_theme: $base_theme;
+// $nav_type: 'is-flat';
+// $nav_size: 5;
+// $nav_padding: 'has-padding-tiny';
+// $nav_gradient: false;
+// $nav_3D: false;
+
+
+// Sections <section>
+// =============================================================================
+// $row_padding: 'has-padding';
+// $row-margin: 'has-margin-vertical';
+
+
+
+
+// DO NOT REMOVE ===============================================================
+// Always add the trowel src at the end!!
+// =============================================================================
+@import '../src/sass/trowel';

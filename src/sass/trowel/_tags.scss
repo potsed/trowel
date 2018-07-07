@@ -1,0 +1,98 @@
+$tag_theme: $base_theme !default;
+$tag_size: 'is-small' !default;
+$tag_padding: 0 .4rem 0 .6rem !default;
+$tag_margin: 'has-margin-tiny' !default;
+$tag_case: 'is-capitalized' !default;
+$tag_font_weight: $base_font_weight !default;
+$tag_arrow_width: 0.5rem;
+$tag_arrow_border_height: 0.6rem;
+
+u, .tag {
+    @extend .#{$tag_theme};
+    @extend .#{$tag_size};
+    @extend .#{$tag_case};
+    @extend .#{$tag_margin} !optional;
+    @extend .is-uppercase;
+
+    border-radius: 0 .2rem .2rem 0;
+    display: inline-flex;
+    align-items: center;
+    height: 1.2rem;
+    position: relative;
+    margin: 0 0 0 $tag_arrow_width;
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: $tag_padding;
+    font-weight: $tag_font_weight;
+    font-size: 0.6rem;
+    width: auto;
+
+    &::before {
+        background: $white;
+        border-radius: 50%;
+        content: '';
+        height: 4px;
+        left: 0px;
+        position: absolute;
+        width: 4px;
+    }
+
+    &::after {
+        background: transparent;
+        border-bottom: $tag_arrow_border_height solid transparent;
+        border-right: $tag_arrow_width solid map-get( $theme_bg_colors, $tag_theme);
+        border-top: $tag_arrow_border_height solid transparent;
+        content: '';
+        position: absolute;
+        left: -$tag_arrow_width;
+        top: 0;
+    }
+
+    // &.is-left {
+    //     @extend .is-flat;
+    // }
+
+    // @if( $tag_type == 'is-flat' ) {
+    //     @extend .is-flat;
+    // }
+
+    // &.is-3D {
+    //     @extend %#{$tag_theme}_3D;
+    // }
+    // @if($tag_type == 'is-3D' or $tag_3D ) {
+    //     @extend %#{$tag_theme}_3D;
+    // }
+
+    // &.is-gradient {
+    //     @extend %#{$tag_theme}_gradient;
+    // }
+    // @if($tag_type == 'is-gradient' or $tag_gradient ) {
+    //     @extend %#{$tag_theme}_gradient;
+    // }
+
+    // &.is-outlined {
+    //     @extend %#{$tag_theme}_outlined;
+    // }
+    // @if($tag_type == 'is-outlined' or $tag_outlined ) {
+    //     @extend %#{$tag_theme}_outlined;
+    //     &:hover {
+    //         background: $white;
+    //     }
+    // }
+
+    // @include ripple( map-get( $theme_bg_colors, $tag_theme) );
+    // &:focus { outline: none; }
+}
+
+@each $name, $theme in $themes {
+    $bgcolor: nth($theme, 1);
+    $altcolor: nth($theme, 2);
+
+    u.is-#{$name},
+    .tag.is-#{$name} {
+        background-color: $bgcolor;
+        &::after {
+            border-right-color: $bgcolor;
+        }
+    }
+};

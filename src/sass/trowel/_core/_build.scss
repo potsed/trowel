@@ -1,0 +1,25 @@
+$theme_bg_colors: ();
+
+@if( type-of( $custom_theme ) == 'map' ) {
+    $theme: join( $theme, $custom_theme );
+}
+
+@each $name, $theme in $themes {
+    $bgcolor: nth($theme, 1);
+    $altcolor: nth($theme, 2);
+
+    $theme_bg_colors: map-merge( $theme_bg_colors, ( 'is-' + $name: $bgcolor ) );
+
+    .is-#{$name} {
+        background-color: $bgcolor;
+        color: $altcolor;
+        &-invert {
+            background-color: $altcolor;
+            color: $bgcolor;
+        }
+        &:disabled, &.is-disabled {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+    }
+};

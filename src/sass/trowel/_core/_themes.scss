@@ -1,0 +1,14 @@
+$custom_theme: 'DEFINE YOUR OWN THEME' !default;
+$themes: (
+    'light': ( $black, $white ),
+    'dark': ( $white, $black ),
+    'danger': ( $red, $white ),
+    'info': ( $info, $white ),
+    'success': ( $green, $white ),
+    'warning': ( $orange, $white ),
+    'subdued': ( $subdued, $subdued-alt ),
+    'greyscale': ( $greyscale, $greyscale-alt ),
+    'brand': ( $brand, $brand-alt ),
+    'secondary': ( $secondary, $secondary-alt ),
+    'cta': ( $cta, $cta-alt )
+);

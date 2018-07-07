@@ -1,0 +1,46 @@
+@mixin ripple( $bg_color ) {
+    transition: background 0.5s;
+    &:hover {
+        $light: lighten( $bg_color, 5% );
+        background: $light radial-gradient(circle, transparent 1%, $light 1%) center/15000%;
+    }
+    &:active {
+        background-color: lighten( $bg_color, 20% );
+        background-size: 100%;
+        transition: background 0s;
+    }
+}
+
+
+@mixin isGradient( $color ) {
+    $light: lighten( $color, 8% );
+    $dark: darken( $color, 8% );
+    $gradient: linear-gradient($light, $dark);
+    background: $gradient;
+}
+
+
+@mixin is3D( $color: $shadow_color ) {
+    $orig: $color;
+    $lightness: lightness( $color );
+    @if $lightness <= 15 {
+        $color: lighten( $color, 20% );
+    } @else if $lightness <= 30 {
+        $color: lighten( $color, 25% );
+    } @else if $lightness >= 75 {  // Lightest
+        $color: darken( $color, 10% );
+    } @else if $lightness > 30 {
+        $color: darken( $color, 15% );
+    }
+    box-shadow: 0 3px 0 0 $color;
+    background: $orig linear-gradient($orig, lighten( $orig, 15% ));
+}
+
+
+@mixin isOutlined( $colortheme: $theme, $text: $color ) {
+    @extend .#{$colortheme}-invert;
+    background: transparent;
+    &:hover {
+        color: $text;
+    }
+}

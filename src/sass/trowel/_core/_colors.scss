@@ -1,0 +1,41 @@
+$navy:              #001F3F;
+$blue:              #0074D9;
+$aqua:              #7FDBFF;
+$teal:              #39CCCC;
+$olive:             #3D9970;
+$green:             #2ECC40;
+$lime:              #01FF70;
+$yellow:            #FFDC00;
+$orange:            #FF851B;
+$red:               #FF4136;
+$fuchsia:           #F012BE;
+$purple:            #B10DC9;
+$maroon:            #85144B;
+$white:             #fff;
+$silver:            #ddd;
+$gray:              #aaa;
+$black:             #111;
+
+$brand:             rgb(95, 75, 139) !default;
+$brand-alt:         $white !default;
+
+$secondary:         $black !default;
+$secondary-alt:     $white !default;
+
+$cta:               rgb(248, 215, 66) !default;
+$cta-alt:           $black !default;
+
+$subdued:           desaturate( $brand, 50% ) !default;
+$subdued-alt:       $white !default;
+
+$greyscale:         grayscale( $brand ) !default;
+$greyscale-alt:     $white !default;
+
+$page-background:   $white !default;
+$translucent:       rgba( $white, .3 );
+
+$info:              rgb(87, 150, 214) !default;
+$info-alt:          $white !default;
+
+$shadow_color:      $black !default;
+$color:             lighten($black, .8) !default;

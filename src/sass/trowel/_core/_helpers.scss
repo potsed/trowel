@@ -1,0 +1,59 @@
+.is-uppercase {
+    text-transform: uppercase;
+}
+
+.is-capitalized {
+    text-transform: capitalize;
+}
+
+.is-rounded {
+    border-radius: $base_radius;
+}
+
+.is-radiusless,
+.is-sharp  {
+    border-radius: 0;
+}
+
+.is-pill {
+    border-radius: 1.5em;
+}
+
+.is-paddingless {
+    padding: 0;
+}
+
+.is-paddingless-horizontal {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.is-paddingless-vertical {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.is-marginless {
+    margin: 0;
+}
+
+.is-marginless-horizontal {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.is-marginless-vertical {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.flex {
+    &-row {
+        display: flex;
+        align-items: center;
+    }
+
+    &-item {
+        display: inline-flex;
+    }
+}
